@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "9c5ec6aa-4c70-42b0-a0c5-78aae9fc72fe",
+		"name": "warehouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /articles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"art_id\": \"1\",\n    \"name\": \"leg\",\n    \"stock\": \"12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"articles"
+					]
+				},
+				"description": "Add a new article"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"articles"
+					]
+				},
+				"description": "Retrieve all articles"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /articles/file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/articles/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"articles",
+						"file"
+					]
+				},
+				"description": "Upload a list of articles via file"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Dining Chair\",\n    \"contain_articles\": [\n    {\n        \"art_id\": \"1\",\n        \"amount_of\": \"4\"\n    },\n    {\n        \"art_id\": \"2\",\n        \"amount_of\": \"8\"\n    },\n    {\n        \"art_id\": \"3\",\n        \"amount_of\": \"1\"\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				},
+				"description": "Add a new product"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				},
+				"description": "Retrieve all products"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /products/file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"file"
+					]
+				},
+				"description": "Upload a list of products via file"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /products/{id}/sell",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/1/sell",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1",
+						"sell"
+					]
+				},
+				"description": "Sell a product and update inventory accordingly"
+			},
+			"response": []
+		}
+	]
+}
